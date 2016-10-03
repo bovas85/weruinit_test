@@ -1,6 +1,6 @@
 ## Overview
 
-We Ruin It Challenge made with Web-starter-kit and Bootstrap, [Download](https://github.com/google/web-starter-kit/releases/latest) the kit
+We Ruin It Challenge made with Web-starter-kit and Bootstrap, [Download](https://github.com/google/web-starter-kit/releases/latest) the Web-starter-kit
 
 ## Quickstart
 
