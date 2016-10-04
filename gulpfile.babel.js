@@ -42,7 +42,7 @@ gulp.task('lint', () =>
   gulp.src('app/scripts/**/*.js')
     .pipe($.eslint())
     .pipe($.eslint.format())
-    //.pipe($.if(!browserSync.active, $.eslint.failOnError()))
+    .pipe($.if(!browserSync.active, $.eslint.failOnError()))
 );
 
 // Optimize images
@@ -103,7 +103,8 @@ gulp.task('styles', () => {
     .pipe($.autoprefixer(AUTOPREFIXER_BROWSERS))
     .pipe(gulp.dest('.tmp/styles'))
     // Concatenate and minify styles
-    .pipe($.if('*.css', $.cssnano()))
+    .pipe($.if('main.css', $.cssnano()))
+    .pipe($.if('normalize.css', $.cssnano()))
     .pipe($.size({title: 'styles'}))
     .pipe($.sourcemaps.write('./'))
     .pipe(gulp.dest('dist/styles'));
