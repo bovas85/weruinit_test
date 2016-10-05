@@ -17,6 +17,7 @@
  *
  */
 /* eslint-env browser */
+
 (function() {
   'use strict';
 
@@ -72,5 +73,15 @@
     });
   }
 
-  // Your custom JavaScript goes here
+  $('#vertoCarousel').on('slide.bs.carousel', function () {
+    $('.item p, .item h2, .item img').css('opacity', '0');
+  });
+  $('#vertoCarousel').on('slid.bs.carousel', function () {
+    $('.item p, .item h2, .item img').css('opacity', '1');
+  });
+
+  $(document).ready(function(){
+    $('.js-counter').counterUp({delay: 10, time: 1000});
+  });
+
 })();
