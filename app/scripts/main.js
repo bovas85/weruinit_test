@@ -81,7 +81,11 @@
   });
 
   $(document).ready(function(){
-    $('.js-counter').counterUp({delay: 10, time: 1000});
+      $('.js-counter').counterUp({delay: 10, time: 1000});
   });
+
+  $(window).scroll(function(){
+    $('.navbar').offset().top < 600 ? $('.navbar').removeClass('scrolled') : $('.navbar').addClass('scrolled');
+  })
 
 })();

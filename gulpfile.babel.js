@@ -61,6 +61,7 @@ gulp.task('copy', () =>
   gulp.src([
     'app/*',
     '!app/*.html',
+    'app/fonts/*',
     'node_modules/apache-server-configs/dist/.htaccess'
   ], {
     dot: true
@@ -103,6 +104,7 @@ gulp.task('styles', () => {
     .pipe($.autoprefixer(AUTOPREFIXER_BROWSERS))
     .pipe(gulp.dest('.tmp/styles'))
     // Concatenate and minify styles
+    .pipe($.if('bootstrap.min.css', $.cssnano()))
     .pipe($.if('main.css', $.cssnano()))
     .pipe($.if('normalize.css', $.cssnano()))
     .pipe($.size({title: 'styles'}))
@@ -132,6 +134,14 @@ gulp.task('scripts', () =>
       .pipe($.size({title: 'scripts'}))
       .pipe(gulp.dest('dist/scripts'))
 );
+
+
+// Move fonts to dist
+gulp.task('fonts', () => {
+  return gulp.src('app/fonts/**/*')
+    .pipe(gulp.dest('dist/fonts'));
+});
+
 
 // Scan your HTML for assets & optimize them
 gulp.task('html', () => {
@@ -179,7 +189,7 @@ gulp.task('serve', ['scripts', 'styles'], () => {
 
   gulp.watch(['app/**/*.html'], reload);
   gulp.watch(['app/styles/**/*.{scss,css}'], ['styles', reload]);
-  gulp.watch(['app/scripts/**/*.js'], ['lint', 'scripts']);
+  gulp.watch(['app/scripts/**/*.js'], ['scripts', reload]);
   gulp.watch(['app/images/**/*'], reload);
 });
 
