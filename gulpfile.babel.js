@@ -61,7 +61,6 @@ gulp.task('copy', () =>
   gulp.src([
     'app/*',
     '!app/*.html',
-    'app/fonts/*',
     'node_modules/apache-server-configs/dist/.htaccess'
   ], {
     dot: true
@@ -94,17 +93,9 @@ gulp.task('styles', () => {
       precision: 10
     }).on('error', $.sass.logError))
     // Remove any unused CSS
-    .pipe($.if('*.css', $.uncss({
-      html: [
-        'app/index.html'
-      ],
-      // CSS Selectors for UnCSS to ignore
-      ignore: []
-    })))
     .pipe($.autoprefixer(AUTOPREFIXER_BROWSERS))
     .pipe(gulp.dest('.tmp/styles'))
     // Concatenate and minify styles
-    .pipe($.if('bootstrap.min.css', $.cssnano()))
     .pipe($.if('main.css', $.cssnano()))
     .pipe($.if('normalize.css', $.cssnano()))
     .pipe($.size({title: 'styles'}))
@@ -213,7 +204,7 @@ gulp.task('serve:dist', ['default'], () =>
 gulp.task('default', ['clean'], cb =>
   runSequence(
     'styles',
-    ['html', 'scripts', 'images', 'copy'],
+    ['html', 'scripts', 'images', 'copy', 'fonts'],
     'generate-service-worker',
     cb
   )

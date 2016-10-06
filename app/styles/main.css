@@ -116,6 +116,7 @@ html {
     color: #222;
     font-size: 1em;
     line-height: 1.4;
+    overflow-x: hidden;
 }
 
 /*
@@ -242,23 +243,39 @@ h4 {
 .navbar-brand {
     height: 50px;
     position: absolute;
-    font-size: 18px;
+    font-size: 16px;
     line-height: 20px;
     top: 40px;
     left: 150px;
 }
 .navbar .navbar-right {
   position: absolute;
+  font-size: 16px;
   right: 150px;
   top: 55px;
   color: white;
+  transition: background .3s ease-in-out;
 }
-.scrolled .navbar .navbar-right {
-  background-color: lightgrey;
-  background-color: rgba(0,0,0,.5);
+.scrolled .navbar-right {
+  background-color: black;
+  right: 0;
+  top: 0;
+  width: 100%;
+  padding-left: 185px;
+  margin: 0;
 }
 .navbar-brand img { display: inline; }
-.scrolled .navbar-brand img { display: none; }
+.scrolled .navbar-brand span { display: none; }
+.scrolled .navbar-logo {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 40px;
+  height: 40px;
+  margin: 5px;
+  margin-left: 145px;
+}
 .navbar-default .navbar-nav > li > a {
   color: white;
 }
@@ -274,11 +291,11 @@ h4 {
 }
 .verto-logo-text {
   font-size: 28px;
-  font-weight: 200;
+  font-weight: 700;
   color: white;
 }
-.verto-logo-text + .verto-logo-text__light {
-  font-weight: normal;
+.verto-logo-text__light {
+  font-weight: 200;
 }
 .hero-container {
   position: relative;
@@ -325,9 +342,14 @@ section:not(.hero-container) {
 .cta {
   margin-top: 150px;
 }
-.what-we-do img {
+.what-we-do .icon-img {
   width: auto;
-  height: 150px;
+  height: 8rem;
+  margin-bottom: 30px;
+}
+.icon-img + p {
+  color: #93bd29;
+  font-size: 1rem;
 }
 .row-top {
   margin-top: 60px;
@@ -348,9 +370,15 @@ section:not(.hero-container) {
 .cta-img {
   top: auto;
   right: auto;
-  bottom: 0;
+  bottom: -100%;
   left: 50%;
+  -webkit-transform: translateX(-50%);
   transform: translateX(-50%);
+  overflow: hidden;
+  transition: all .9s ease-in;
+}
+.scrolled-cta .cta-img {
+  bottom: 0;
 }
 .cta-logo {
   width: 200px;
@@ -400,7 +428,7 @@ section:not(.hero-container) {
   left: 50%;
   width: 100%;
   height: 300px;
-  transform: translate(-50%, -30%);
+  transform: translate(-50%, -50%);
 }
 .slider-list .carousel-indicators {
   position: absolute;

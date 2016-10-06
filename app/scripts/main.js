@@ -81,11 +81,17 @@
   });
 
   $(document).ready(function(){
-      $('.js-counter').counterUp({delay: 10, time: 1000});
+      $('.js-counter').counterUp({delay: 10, time: 1200});
   });
 
   $(window).scroll(function(){
-    $('.navbar').offset().top < 600 ? $('.navbar').removeClass('scrolled') : $('.navbar').addClass('scrolled');
+    $('.navbar').offset().top < 200 ? $('.navbar').removeClass('scrolled') : $('.navbar').addClass('scrolled');
+
+    if ($(window).scrollTop() < 1700 || $(window).scrollTop() > 2700) {
+      $('main').removeClass('scrolled-cta');
+    } else {
+      $('main').addClass('scrolled-cta');
+    }
   })
 
 })();
