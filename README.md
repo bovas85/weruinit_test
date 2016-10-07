@@ -28,4 +28,5 @@ Web Starter Kit is inspired by [Mobile HTML5 Boilerplate](https://html5boilerpla
 
 Apache 2.0  
 Copyright 2015 Google Inc
+
 Alessandro Giordo
