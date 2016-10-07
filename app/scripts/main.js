@@ -84,7 +84,7 @@
       $('.js-counter').counterUp({delay: 10, time: 1200});
 
       $('.hidden-sm-up').click(function(){
-        $(window).animate({top:0},3000);
+        $('body').animate({scrollTop:0},2000);
       });
   });
 

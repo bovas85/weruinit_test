@@ -69,7 +69,7 @@
   width: 40px;
   height: 40px;
   line-height: 40px;
-  font-size: 28px;
+  font-size: 1.8rem;
   -webkit-border-radius: 2px;
   -moz-border-radius: 2px;
   border-radius: 2px;
@@ -93,7 +93,7 @@
   background-color: #95C21F;
   width: 30px;
   height: 30px;
-  font-size: 25px;
+  font-size: 1.5rem;
   line-height: 37px;
   padding-left: 5px;
   position: relative;
@@ -120,7 +120,7 @@
 
 html {
   color: #222;
-  font-size: 1em;
+  font-size: 18px;
   line-height: 1.4;
   overflow-x: hidden;
 }
@@ -201,7 +201,7 @@ textarea {
 
 body {
   font-family: 'Poppins', sans-serif;
-  font-size: 22px;
+  font-size: 1rem;
 }
 
 h1,
@@ -228,6 +228,7 @@ h4 {
   font-size: 1.3rem;
 }
 
+.btn { font-size: 0.8rem; }
 .navbar {
   min-height: 0;
   margin-bottom: 0;
@@ -257,7 +258,7 @@ h4 {
 .navbar-brand {
   height: 50px;
   position: absolute;
-  font-size: 16px;
+  font-size: 0.8rem;
   line-height: 20px;
   top: 40px;
   left: 150px;
@@ -265,7 +266,7 @@ h4 {
 
 .navbar .navbar-right {
   position: absolute;
-  font-size: 16px;
+  font-size: 0.8rem;
   right: 150px;
   top: 55px;
   color: white;
@@ -317,7 +318,7 @@ h4 {
 }
 
 .verto-logo-text {
-  font-size: 28px;
+  font-size: 1.4rem;
   font-weight: 700;
   color: white;
 }
@@ -360,7 +361,7 @@ section:not(.hero-container) {
 
 .counters {
   color: #93bd29;
-  font-size: 4rem;
+  font-size: 3.4rem;
   font-family: 'Open Sans';
   font-weight: 300;
 }
@@ -373,6 +374,10 @@ section:not(.hero-container) {
   margin-top: 100px;
 }
 
+.who-we-are a {
+  margin-top: 30px;
+}
+
 .cta {
   margin-top: 150px;
 }
@@ -383,13 +388,17 @@ section:not(.hero-container) {
   margin-bottom: 30px;
 }
 
-.icon-img+p {
+.icon-img + p {
   color: #93bd29;
   font-size: 1rem;
 }
 
+.icon-img {
+  margin-top: 30px;
+}
+
 .row-top {
-  margin-top: 60px;
+  margin-top: 0;
 }
 
 .row-bottom {
@@ -412,7 +421,6 @@ section:not(.hero-container) {
   right: auto;
   bottom: -100%;
   left: 50%;
-  -webkit-transform: translateX(-50%);
   transform: translateX(-50%);
   overflow: hidden;
   transition: all .9s ease-in;
@@ -444,7 +452,8 @@ section:not(.hero-container) {
   position: absolute;
   top: 0;
   left: 0;
-  background: url(../images/large-house@2x.jpg) no-repeat 60% 75%;
+  background: url(../images/large-house@2x.jpg) no-repeat 60% 10%;
+  background-size: cover;
 }
 
 .slider p {
@@ -455,7 +464,7 @@ section:not(.hero-container) {
 
 .slider-text {
   color: white;
-  font-size: 3.4em;
+  font-size: 3.4rem;
 }
 
 .slider-list {
@@ -477,13 +486,13 @@ section:not(.hero-container) {
   top: 50%;
   left: 50%;
   width: 100%;
-  height: 300px;
-  transform: translate(-50%, -50%);
+  height: 65vh;
+  transform: translate(-50%, -35%);
 }
 
 .slider-list .carousel-indicators {
   position: absolute;
-  bottom: -80px;
+  bottom: 0;
   left: 50%;
   transform: translateX(0%);
 }
@@ -494,24 +503,42 @@ section:not(.hero-container) {
   opacity: 1;
   transition: opacity .5s ease-in;
 }
+
 .footer {
-  font-size: 14px;
+  font-size: 0.6rem;
   padding: 30px 0 0;
-  margin-bottom: 70px;
+  margin-bottom: 40px;
 }
+
 .footer a {
   text-decoration: none;
   color: #93bd29;
 }
+
 .footer a:hover {
   text-decoration: underline;
 }
+
 .awards {
   margin-top: 30px;
 }
+
 .copyright {
   margin-top: 50px;
-  font-size: 12px;
+  font-size: 0.5rem;
+}
+
+.hidden-sm-up {
+  margin-top: 40px;
+  font-size: 1.6rem;
+}
+
+.hidden-sm-up:hover {
+  cursor: pointer;
+}
+
+.web-author {
+  margin-top: 10px;
 }
 
 /* ==========================================================================
@@ -611,14 +638,40 @@ section:not(.hero-container) {
     display: none
   }
 
+  .hero-header {
+    background: url(../images/top-back.jpg) no-repeat 60% 75%;
+  }
+
+  .slider {
+    background: url(../images/large-house.jpg) no-repeat 35% 8%;
+  }
+
+  .cta-bg {
+    height: 375px;
+    background: url(../images/vesta-back.jpg) no-repeat 100% 70%;
+  }
+
+  .counters {
+    font-size: 2.5rem;
+  }
+
+  .cta {
+    margin-top: 60px;
+  }
+
+  .who-we-are,
+  .what-we-do,
+  .verto-counter {
+    margin-top: 40px;
+  }
+
   #vertoCarousel {
     position: absolute;
     top: 50%;
     left: 50%;
     width: 600px;
-    height: 300px;
-    -webkit-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
+    height: 65vh;
+    transform: translate(-50%, -40%);
   }
 
   .cta-img {
@@ -629,6 +682,10 @@ section:not(.hero-container) {
 
   h1 {
     font-size: 2.8rem;
+  }
+
+  .hero-header {
+    background: url(../images/top-back.jpg) no-repeat 60% 75%;
   }
 
   .scrolled .navbar-toggle {
@@ -643,13 +700,15 @@ section:not(.hero-container) {
     left: 0;
   }
 
+
+
   .slider-text {
     font-size: 1.4em;
   }
 
   .navbar .navbar-right {
     position: absolute;
-    font-size: 16px;
+    font-size: 0.8rem;
     top: 52px;
     display: flex;
     flex-direction: column;
@@ -684,8 +743,10 @@ section:not(.hero-container) {
   .cta {
     margin-top: 60px;
   }
+
   .cta-bg {
     height: 200px;
+    background: url(../images/vesta-back.jpg) no-repeat 64% 80%;
   }
 
   .hero-img {
@@ -704,14 +765,79 @@ section:not(.hero-container) {
     top: 50%;
     left: 50%;
     width: 280px;
-    height: 380px;
-    -webkit-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
+    height: 65vh;
+    transform: translate(-50%, -40%);
   }
   .hidden-sm-up {
     margin-top: 30px;
-    font-size: 24px;
+    font-size: 1.2rem;
   }
+}
+
+@media only screen and (min-width: 2559px) {
+
+  html { font-size: 24px; }
+
+  h1 {
+    font-size: 3rem;
+    font-weight: 200;
+  }
+
+  .btn-success {
+    padding: 20px 50px;
+    margin: 20px auto;
+  }
+
+  .slider-container {
+    margin-top: 10px;
+    position: relative;
+    height: 100vh;
+    width: 100%;
+  }
+
+  .slider-list .carousel-indicators {
+    bottom: 0;
+  }
+
+  .slider {
+    height: 100vh;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: url(../images/large-house@2x.jpg) no-repeat center top;
+  }
+
+  .what-we-do .icon-img:first-child {
+    margin-top: 60px;
+  }
+
+  #vertoCarousel {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 65vh;
+    transform: translate(-50%, -30%);
+  }
+
+  .carousel-indicators li {
+    width: 22px;
+    height: 22px;
+    border-radius: 15px;
+  }
+
+  .carousel-indicators .active {
+    width: 22px;
+    height: 22px;
+    border-radius: 15px;
+  }
+
+  .footer {
+    padding: 30px 0 0;
+    margin-bottom: 40px;
+  }
+
 }
 @media print, (-webkit-min-device-pixel-ratio: 1.25), (min-resolution: 1.25dppx), (min-resolution: 120dpi) {
   /* Style adjustments for high resolution devices */
