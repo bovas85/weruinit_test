@@ -1,6 +1,8 @@
 ## Overview
 
-We Ruin It Challenge made with Web-starter-kit and Bootstrap, [Download](https://github.com/google/web-starter-kit/releases/latest) the Web-starter-kit
+We Ruin It Challenge made with Web-starter-kit and Bootstrap for Verto Homes Website.
+
+Find it online at [http://moustachedesign.xyz/vertohomes.com/](http://moustachedesign.xyz/vertohomes.com/)
 
 ## Quickstart
 
