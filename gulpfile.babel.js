@@ -98,7 +98,7 @@ gulp.task('styles', () => {
         'app/index.html'
       ],
       // CSS Selectors for UnCSS to ignore
-      ignore: []
+      ignore: [/\.fade/, /\.modal/, '.affix', /\.tooltip/, /\.popover/, /\.collaps/, /\.carousel-inner/, /\.scrolled/, /\.scrolled-cta/]
     })))
     .pipe($.autoprefixer(AUTOPREFIXER_BROWSERS))
     .pipe(gulp.dest('.tmp/styles'))
@@ -121,7 +121,6 @@ gulp.task('scripts', () =>
       './app/scripts/counter.min.js',
       './app/scripts/main.js',
       './app/scripts/bootstrap.min.js'
-      // Other scripts
     ])
       .pipe($.newer('.tmp/scripts'))
       .pipe($.sourcemaps.init())
